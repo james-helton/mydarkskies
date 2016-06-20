@@ -1,3 +1,0 @@
-# mydarkskies
-
-An Astroblog app
