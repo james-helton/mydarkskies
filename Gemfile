@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,6 +20,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use figaro to securely store and create environment variables
+gem 'figaro'
+
+# Use omniauth & omniauth-google-oauth2 for authentication
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -35,6 +39,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Use sqlite3 as the database for Active Record in development
+  gem 'sqlite3'
+  # Rspec for testing
+  gem 'rspec-rails'
+  gem 'pry-byebug'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -45,3 +56,9 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  # Use Postgres as the database for Active Record in production
+  gem 'pg'
+  # Use rails_12factor for deploying to Heroku
+  gem 'rails_12factor'
+end
